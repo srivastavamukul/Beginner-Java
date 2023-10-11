@@ -1,48 +1,38 @@
 import java.util.*;
-class Toggle
-{
+class Toggle    {
     Scanner sc=new Scanner(System.in);
     String str,newstr;
     int len;
-    Toggle()
-    {
+    Toggle()    {
         str="";
         newstr="";
         len=0;
     }
-    void readword()
-    {
+    void readword()    {
         System.out.print("Enter the word ");
         str=sc.nextLine();
         System.out.println("");
         len=str.length();
     }
-    void toggle()
-    {
-        for(int i=0;i<len;i++)
-        {
+    void toggle()    {
+        for(int i=0;i<len;i++)    {
             char ch=str.charAt(i);
-            if(ch>64&&ch<91)
-            {
+            if(ch>64&&ch<91)    {
                 newstr+=(char)(ch+32);
             }
-            else if(ch>96&&ch<123)
-            {
+            else if(ch>96&&ch<123)    {
                 newstr+=(char)(ch-32);
             }
-            else
-            {
+            else    {
                 newstr+=ch;
             }
         }
     }
-    void display()
-    {
+    void display()    {
         toggle();
         System.out.println("Before toggle : "+str+'\n'+"After toggle : "+newstr);
     }
-    public static void main()
-    {
+    public static void main()    {
         Toggle obj=new Toggle();
         obj.readword();
         obj.display();
