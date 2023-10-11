@@ -1,0 +1,35 @@
+import java.util.*;
+class Emirp  {
+    int n,rev,f;
+    Emirp(int nn)  {
+        n=nn;
+        rev=0;
+        f=2;
+    }
+
+    int isprime(int x)  {
+        if(n==x)
+            return 1;
+        else if(n%x==0||n==1)
+            return 0;
+        else
+            return isprime(x+1);
+    }
+
+    void isEmirp()  {
+        int temp=n;
+        while(temp>0)`{
+            rev=10*rev+temp%10;
+            temp=temp/10;
+        }
+        System.out.println(n+" is "+((isprime(f)==0)?"not an":"an")+" Emirp Prime.");
+    }
+
+    public static void mian()  {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number to check :");
+        int nn=sc.nextInt();
+        Emirp obj=new Emirp(nn);
+        obj.isEmirp();
+    }
+}
