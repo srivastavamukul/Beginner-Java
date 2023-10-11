@@ -1,0 +1,39 @@
+import java.util.*;
+class Convert
+{
+    Scanner sc=new Scanner(System.in);
+    int n;
+    Convert()
+    {
+        n=0;
+    }
+
+    void inpnum()
+    {
+        System.out.println("Enter the number to be converted :");
+        n=sc.nextInt();
+        extdigit(n);
+    }
+
+    void extdigit(int nn)
+    {
+        if(nn>0)
+        {
+            int a=nn%10;
+            extdigit(nn/10);
+            numtowords(a);
+        }
+    }
+
+    void numtowords(int nn)
+    {
+        String s[] = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+        System.out.print(s[nn]+" ");
+    }
+
+    public static void main()
+    {
+        Convert obj=new Convert();
+        obj.inpnum();
+    }
+}
