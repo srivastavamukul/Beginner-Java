@@ -1,33 +1,26 @@
 import java.util.*;
-class Fibo
-{
+class Fibo    {
     Scanner sc=new Scanner(System.in);
     int start,end;
-    Fibo()
-    {
+    Fibo()    {
         start=0;
         end=0;
     }
-    void read()
-    {
+    void read()    {
         System.out.println("Enter the start and end value(position) of series");
         start=sc.nextInt();
         end=sc.nextInt();
     }
-    int fibo(int n)
-    {
+    int fibo(int n)    {
         return (n==0)?0:((n==1)?1:(fibo(n-1)+fibo(n-2)));
     }
-    void display()
-    {
+    void display()    {
         System.out.println("Fibonacci series from "+start+" to "+end+" is :");
-        while(start<end+1)
-        {
+        while(start<end+1)    {
             System.out.print(fibo(start++)+"\t");
         }
     }
-    public static void main()
-    {
+    public static void main()    {
         Fibo obj=new Fibo();
         obj.read();
         obj.display();
