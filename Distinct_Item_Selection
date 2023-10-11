@@ -1,0 +1,25 @@
+import java.util.*;
+class nCr  {
+    Scanner sc=new Scanner(System.in);
+    int n,r;
+    nCr()  {
+        n=0;
+        r=0;
+    }
+    void accept()  {
+        System.out.println("Enter the total number of distinct items and total number of distinct items to be selected");
+        n=sc.nextInt();
+        r=sc.nextInt();
+    }
+    long fact(int a)  {
+        return (a>1)?a*fact(a-1):1;
+    }
+    void compute()  {
+        System.out.println("Combination Value : "+((fact(n))/((fact(r))*(fact(n-r)))));
+    }
+    public static void main()  {
+        nCr obj=new nCr();
+        obj.accept();
+        obj.compute();
+    }
+}
